@@ -15,6 +15,50 @@ summary(x)
 hist(x)
 savehistory()
 save.image()
-q()
-load()
+hist(airquality$Wind)
+# 从本地加载脚本文件   加上路径也可以
+ 
+#sink()方法  会将文件重定向到一个文件  通常是写覆盖的   append=TRUE 会 变成追加 
+#sink stack  可能会 出现full 情况
+###  调试了半个小时  将总结的坑公布如下 
+# 1 setwd  真心要用反斜杠/
+# 2 sink 里面的文件 不知有何作用
+# 3  环境还是有些不稳定 容易报错  例如
+# ????同时保存两种格式的文件  第一种 并无法保存   最后的文件格式被保存
+# append 方法 也不会在文件中追加而是直接写覆盖  虽然已经设置了append=TRUE
 
+sink("abc.txt",append=FALSE,split=TRUE)
+
+pdf("mygraphs.pdf")
+jpeg("mygraphs.jpg")
+source("test.R",encoding="UTF-8")
+sink()
+dev.off()
+source("test.R")
+View(mtcars)
+#with(mpg~wt,data = mtcars)
+#画图是先横坐标 x   再 中坐标 y   画反了的话 回归分析线出不来
+with(mtcars,plot(wt,mpg,xlab = "车身重量",ylab = "汽车油耗",title(main="回归分析")))
+fit=lm(mpg~wt,data=mtcars)
+abline(fit,lwd=2)
+summary(fit)
+x=summary(fit)
+help.start()
+install.packages(vcd)
+help(package=vcd)
+library(vcd)
+help(Arthritis)
+Arthritis
+View(Arthritis)
+example(Arthritis)
+
+
+
+
+
+
+
+
+
+
+ 
