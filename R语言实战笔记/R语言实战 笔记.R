@@ -46,13 +46,16 @@ x=summary(fit)
 help.start()
 install.packages(vcd)
 help(package=vcd)
+#小练习
 library(vcd)
 help(Arthritis)
 Arthritis
 View(Arthritis)
 example(Arthritis)
+# 创建数据集合
 
-
+# 变量分为 逻辑行 数值型  字符型 复数型 原生型
+# 向量是一维数组 
 
 
 
