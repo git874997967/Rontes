@@ -118,9 +118,26 @@ ggplot(airquality,aes(Wind,Temp ,color=factor(Month)))+   # 通过 facet grid  �
   geom_point()+                               #   设置是否显示 数据点 
   stat_smooth(method="lm",se=FALSE)+        # 设置  会给回归线 画法 
   scale_color_manual("Month",values=mc)+   #   手动设置调色板 
-  facet_grid(.~Month)                   #按照月份进行分面板显示  
+  facet_grid(.~Month)     +              #按照月份进行分面板显示
+  theme_classic()
   
 
 
 #看到所有调色板 
 display.brewer.all()
+#改变 数据图 主题 
+library(RColorBrewer)
+library(grDevices)
+mc=c(brewer.pal(5,"Dark2"),"black")
+ggplot(airquality,aes(Wind,Temp))+
+  geom_point(aes(color=factor(Month)),alpha=0.5,size=5)+
+  stat_smooth( method="lm",se=FALSE,aes(group=1,color=factor(Month)))+ #产生 一条回归线  
+   stat_smooth(method="lm",se=FALSE,aes(color=factor(Month)))+
+  scale_color_manual("Month",values=mc)+
+  facet_grid(Month~.)+
+  theme_bw()
+
+
+
+
+
