@@ -34,3 +34,31 @@ symnum(cor(trail_data[c(1,5,6,7,8,9,10)]))
 # 首先采用 多元线性回归分析
 lm_model=lm(price~., data=trail_data)
 summary(lm_model)
+#   多元线性回归分析  完毕  接下来是回归树 
+# 导入 rpart 包
+library(rpart)
+library(cluster)
+tree_model=rpart(price~.,data=trail_data)
+#要想对模型进行可视化 需要导入另外的包
+library(maptree)
+draw.tree(tree_model)
+# 防止过度拟合   要对模型进行剪枝 
+rsq.rpart(tree_model)
+#这时我们要选择合适的cp值  来构建复杂性和效果性达到一个平衡点   选择plotcp
+# 函数帮助我们选择cp值  根据下图  选择cp=0.1 的时候最佳
+plotcp(tree_model)
+
+#通过prune 函数对初始模型进行剪枝
+tree_model2=prune(tree_model,cp=0.1)
+#  该方法不完整   要从网上摘取其他教程
+library(randomForest)
+test=head(trail_data,10000)
+#随机森林
+m =ncol(trail_data)
+ 
+for (i in 1:(m-1)){
+  test_model <- randomForest(price~.,data=trail_data,mtry=i,importance=TRUE, proximity=TRUE)
+  mse <- mean(test_model$mse)
+  print(mse)
+}
+ 
