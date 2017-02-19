@@ -66,19 +66,68 @@ with(A{
        xlab="Drug dosage ", ylab=" drug response")
   lines(dose, drugB,type = "b", pch=17,lty=2,col="blue")
   abline(h=c(30),lwd=1.5,lty=2,col="gray")
+  #个人理解这个是自定义的一个  像文本边界添加注释  
   mtext("AAA",col="black",las=1,side=2)
   library(Hmisc)
-  minor.tick(nx=3,ny=3,tick.radio=0.5)
+  #minor.tick(nx=3,ny=3,tick.radio=0.5)
   legend("topleft",inset=.05,title="drug type", c("A","B"),lty=c(1,2),pch=c(15,17),col=c("red","blue"))
 })
+par(opar)
+#利用 text 方法描述  图性中的点 
+head(mtcars)
+
+with(mtcars,{
+  plot(wt,mpg,main="millage vs car weight",
+       xlab="weight",
+       ylab="millage",
+       pch=18,col="blue",lty=1)
+  text(wt,mpg,row.names(mtcars),cex=0.6,pos=4,col="red")
+  mtext("显示在上面的坐标注释",side=3,col="red")
+  legend("topright",inset = .05,title=" 汽车类型", c("brand name"),lty=c(1),pch=c(18),col="blue" )
+})
+ opar=par(no.readonly = TRUE)
+ par(cex=1.5)
+ plot(1:7,1:7,type="n")
+text(3,3,"example of mono-spaced text")
+ text(4,4,family="mono","example of mono-spaced text")
+ # text(5,5,family ="serif", "example of serif text")
 par(opar)
 
 
 
+# 多个  图表进行组合
 
+opar=par(no.readonly = TRUE)
+par(mfrow=c(2,2))
+with(mtcars,{
+  plot(wt,mpg,main="scatterplot of wt vs mpg")
+  plot(wt,disp, main=" scatterplot of wt vs disp")
+  hist(wt,main="histogram of wt")
+  boxplot(wt,main="boxplot of wt")
+})
+par(opar)
 
+attach(mtcars)
+layout(
+  matrix(c(1,1,2,3),2,2, byrow =  TRUE),
+  widths = c(3,1),heights = c(1,2)
+  )
+hist(wt)
+hist(disp)
+hist(mpg)
+detach(mtcars)
 
-
+opar=par(no.readonly = TRUE)
+par(fig=c(0, 0.8, 0, 0.8))
+plot(mtcars$wt,mtcars$mpg,xlab="mpg",ylab="car weight")
+par(fig=c(0, 0.8, 0.55, 1),new=TRUE)
+boxplot(mtcars$wt,horizontal = TRUE, axis=FALSE)
+par(fig=c(0.65, 1, 0,0.8),new=TRUE)
+boxplot(mtcars$mpg,axis=FALSE)
+mtext(" enhance scatterplot",side=3,outer=TRUE,line=-3)
+par(opar)
+  
+ 
 
  
  
