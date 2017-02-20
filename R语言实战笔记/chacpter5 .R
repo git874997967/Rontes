@@ -31,4 +31,8 @@ mydata=as.data.frame(mydata)
 names(mydata)=c("y","x1","x2")
 dim(mydata)
 head(mydata,n=10)
+#string methods
+paste("x",1:3,seq="M")
+paste("today is ",date())
 
+paste("x",1:4,seq=FALSE)
