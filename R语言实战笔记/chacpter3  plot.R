@@ -126,7 +126,7 @@ par(fig=c(0.65, 1, 0,0.8),new=TRUE)
 boxplot(mtcars$mpg,axis=FALSE)
 mtext(" enhance scatterplot",side=3,outer=TRUE,line=-3)
 par(opar)
-  
+
  
 
  
