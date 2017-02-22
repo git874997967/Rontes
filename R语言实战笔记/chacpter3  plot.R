@@ -66,14 +66,14 @@ with(A{
        xlab="Drug dosage ", ylab=" drug response")
   lines(dose, drugB,type = "b", pch=17,lty=2,col="blue")
   abline(h=c(30),lwd=1.5,lty=2,col="gray")
-  #个人理解这个是自定义的一个  像文本边界添加注释  
+  #ä¸ªäººçè§£è¿ä¸ªæ¯èªå®ä¹çä¸ä¸ª  åææ¬è¾¹çæ·»å æ³¨é  
   mtext("AAA",col="black",las=1,side=2)
   library(Hmisc)
   #minor.tick(nx=3,ny=3,tick.radio=0.5)
   legend("topleft",inset=.05,title="drug type", c("A","B"),lty=c(1,2),pch=c(15,17),col=c("red","blue"))
 })
 par(opar)
-#利用 text 方法描述  图性中的点 
+#å©ç¨ text æ¹æ³æè¿°  å¾æ§ä¸­çç¹ 
 head(mtcars)
 
 with(mtcars,{
@@ -82,8 +82,8 @@ with(mtcars,{
        ylab="millage",
        pch=18,col="blue",lty=1)
   text(wt,mpg,row.names(mtcars),cex=0.6,pos=4,col="red")
-  mtext("显示在上面的坐标注释",side=3,col="red")
-  legend("topright",inset = .05,title=" 汽车类型", c("brand name"),lty=c(1),pch=c(18),col="blue" )
+  mtext("æ¾ç¤ºå¨ä¸é¢çåæ æ³¨é",side=3,col="red")
+  legend("topright",inset = .05,title=" æ±½è½¦ç±»å", c("brand name"),lty=c(1),pch=c(18),col="blue" )
 })
  opar=par(no.readonly = TRUE)
  par(cex=1.5)
@@ -95,7 +95,7 @@ par(opar)
 
 
 
-# 多个  图表进行组合
+# å¤ä¸ª  å¾è¡¨è¿è¡ç»å
 
 opar=par(no.readonly = TRUE)
 par(mfrow=c(2,2))
