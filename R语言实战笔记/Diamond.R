@@ -11,6 +11,8 @@ sample_data=sample(2,nrow(diamonds),replace = TRUE,prob=c(0.7,0.3))
 trail_data=diamonds[sample_data==1,] #训练数据 
 test_data=diamonds[sample_data==2,] # 测试数据
 # 首先获取统计性数据描述 
+plot(trail_data[c(-2,-3,-4)])
+cor.test(trail_data,carat)
 summary(trail_data)
 # 以下代码绘制出关于钻石深度的一个分布  
 library(car)
@@ -64,7 +66,7 @@ head(dfp,10)
 mdf=merge(trail_data$price,dfp)
 draw(mdf)
 # update the model check the relations between each vars and price
-pairs(as.data.frame(trail_data))
+pairs(as.data.frame(trail_data[,c(-2,-3,-4)]))
 
 ##regression tree
 # build the regression tree
@@ -75,7 +77,7 @@ install.packages("maptree")
 library(maptree)
 #draw the tree
 draw.tree(tree_model)
-#我们需要对模型进行剪枝，就是偏差的减少小
+# 这时候为了防止过度拟合 我们需要对模型进行剪枝，就是偏差的减少小
 #于某一个给定的限定值时候
 # 这时候我们需要确定和计算每个节点的参数值cp,
 # 这个参数CP值就是决定函数rpart在构建树的时候
@@ -88,10 +90,10 @@ rsq.rpart(tree_model)
 
 plotcp(tree_model)
 # 这时候我们通过使用prune函数对初始模型进行剪枝，然后得到结果
-tree_model2=prune(tree_model,cp=0.1)
+tree_model2=prune(tree_model,cp=0.1) 
 
-dfp=predict(tree_model2,interval = "prediction")
-head(dfp,10)
+dfp2=predict(tree_model2,interval = "prediction")
+head(dfp2,10)
 #merge data 
-mdf=merge(trail_data$price,dfp)
-draw(mdf)
+mdf2=merge(trail_data$price,dfp2)
+draw(mdf2)
