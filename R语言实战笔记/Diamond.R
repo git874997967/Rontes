@@ -93,7 +93,7 @@ plotcp(tree_model)
 tree_model2=prune(tree_model,cp=0.1) 
 
 dfp2=predict(tree_model2,interval = "prediction")
-head(dfp2,10)
+head(dfp2,1000)
 #merge data 
 mdf2=merge(trail_data$price,dfp2)
 draw(mdf2)
