@@ -6,6 +6,7 @@ library(randomForest)
 library(rjson)
 library("XML")
 library(methods)
+#https://www.brilliance.com/diamond-search?{%22priceMin%22:181,%22priceMax%22:6688103,%22priceMapMin%22:0,%22priceMapMax%22:99,%22caratMin%22:%220.15%20ct.%22,%22caratMax%22:%2229.36%20ct.%22,%22caratMapMin%22:0,%22caratMapMax%22:384,%22cutMin%22:0,%22cutMax%22:2,%22colorMin%22:0,%22colorMax%22:9,%22clarityMin%22:0,%22clarityMax%22:9,%22polishMin%22:0,%22polishMax%22:3,%22symmetryMin%22:0,%22symmetryMax%22:3,%22depthMin%22:0,%22depthMax%22:98.7,%22tableMin%22:0,%22tableMax%22:90,%22fluorMin%22:0,%22fluorMax%22:3,%22shapeList%22:[],%22certificateList%22:[0],%22sort%22:%22price%22,%22sort_order%22:%22desc%22,%22pager%22:100}
 result=xmlParse(file="C:/Users/yzm/Desktop/1.xml")
 result
 # set.seed(1234)
