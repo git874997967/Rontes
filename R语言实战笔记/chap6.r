@@ -1,6 +1,11 @@
 #for basic  plots
 library(vcd)
 library(plotrix)
+library(sm)
+library(lattice)
+library(vioplot)
+library(psych)
+library(vcd)
 counts=table(Arthritis$Improved)
 counts
 head(Arthritis)
@@ -77,13 +82,60 @@ box()
 #核密度图
 h=density(head(mtcars$mpg))
 t=density(tail(mtcars$mpg))
-
-par(mfrow=c(2,1))
+d=density(head(mtcars$mpg)+tail(mtcars$mpg))
+par(mfrow=c(1,1))
 
 plot(d,main="kernel density of miles per gallon")
-polygon(d,col= rgb(255, 0, 0, 80, maxColorValue=255),border = "blue")
+polygon(h,col= rgb(255, 0, 0, 80, maxColorValue=255),border = "blue")
 polygon(t,col= rgb(0, 255, 0, 80, maxColorValue=255) ,border = "blue")
 rug(mtcars$mpg,col="brown")
-mtcars$mpg
 
+par(lwd=2)
+attach(mtcars)
+cyl.f=factor(cyl,level=c(4,6,8),labels = c("4c", "6c","8c"))
+sm.density.compare(mpg,cyl,xlab="mpg")
+title(main="mpg compare by cylinders")
+confill=c(2:(1+length(levels(cyl.f))))
+legend(locator(2),levels(cyl.f),fill=confill)
+rug(mtcars$mpg)
+detach(mtcars)
+# 
+
+attach(mtcars)
+mpg.f=factor(mpg,level=c(head(100),tail(100)),labels=c("head","tail"))
+sm.density.compare(mpg,xlab="mpg")
+title(main="this is the test")
+confill=c(2:(1+length(levels(mpg.f))))
+legend(locator(1),fill=confill,levels=mpg.f)
+detach(mtcars)
+#boxplot good at groups visiualiaztion
+# add notch  varwidth is the attributes
+boxplot(mpg~cyl,data=mtcars, varwidth=FALSE,notch=TRUE,add=FALSE,col =c(1:table(cyl)),log = "y" )
+table(mtcars$cyl)
+
+
+attach(mtcars)
+cyl.f=factor(cyl,level=c(4,6,8),labels=c("4","6","8"))
+am.f=factor(am,level=c(0,1),labels=c("auto","manual"))
+boxplot(mpg~cyl.f*am.f,notch=TRUE,varwidth=TRUE,log="y",col=table(cyl))
+legend(locator(1),col=table(cyl),level=cyl.f)
+detach(mtcars)
+
+# violpot the combination of boxplot and density could show more attritubes at one time
+
+attach(mtcars)
+x1=mtcars$mpg[cyl==4]
+x2=mtcars$mpg[cyl==6]
+x3=mtcars$mpg[cyl==8]
+colc=c(table(cyl)*8)
+
+vioplot(x1,x2,x3,names=c("4 cly","6 cly"," 8 cly "), col=mtcars$cyl)
+title(main = "the vio plot") 
+detach(mtcars)
+
+x=mtcars[order(mtcars$mpg),]
+x$cyl=factor(x$cyl)
+x$col[x$cyl==4]=10
+x$col[x$cyl==6]=100
+x$col[x$cyl==8]=200
 
