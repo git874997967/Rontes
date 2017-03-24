@@ -8,6 +8,9 @@ library(car)
 library(ranger)
 summary(Prestige)
 head(Prestige)
+
+table(Prestige$type)
+
 #  1  linear regression
 lm1=lm(prestige~.,data=prestige_train)
 summary(lm1)
@@ -16,13 +19,29 @@ lm2=lm(prestige~ log10(income*education)+type+women+census,data=prestige_train)
 summary(lm2)  # 83.88
 summary(step(lm2))#854.99
 #??? cannot use =
-lm3=lm(prestige= log10(income*education)~.,data=prestige_train)
-summary(lm3)  #88.75
-summary(step(lm3)) #89.02
+# lm3=lm(prestige= log10(income*education)~.,data=prestige_train)
+# summary(lm3)  #88.75
+# summary(step(lm3)) #89.02
 
-lm4=lm(prestige~ log10(income*education)+type* women*census, data=prestige_train)
+lm4=lm(I(prestige)^(1/2)~ log10(income*education)+type* women*census, data=prestige_train)
 summary(lm4)  # 83.88
 summary(step(lm4))#854.99
+
+par(mfrow=c(2,2))
+plot(lm1)
+# better than plot()
+qqPlot(lm1) # fail
+crPlots(lm4)
+vif(lm4) 
+ncvTest(lm4)  #fail  
+spreadLevelPlot(lm4)
+outlierTest(lm4)
+hatvalues(lm1)
+cooks.distance(lm4)
+influencePlot(lm1)
+with(Prestige,{
+  plot(women~type+women*census,type="l",col=2)
+})
 
 p1=predict(lm1,newdata = prestige_test)
 p2=predict(lm2,newdata = prestige_test)
@@ -39,7 +58,7 @@ with(prestige_test,{
 })
 with(prestige_test,{
   plot(prestige,type="l",main=" predict with model 4")
-  points(p4,col=3,type="l")
+  points(p4^2,col=3,type="l")
 })
 plot(p2,type="l",col=2)
 View(p2)
@@ -55,12 +74,34 @@ head(traindata)
 
 
 #increase the iterate times to cover the first waring
+
+gm2=glm(prestige~.,data=prestige_train,family="gaussian")
+spreadLevelPlot(gm2)
+p6=predict(gm2,newdata = prestige_test,type="response")
+ 
+with(prestige_test,{
+  plot(prestige,type="l",main=" predict with model 6 ")
+  points(p6,col=3,type="l")
+})
+
+gm3=glm(I(prestige)^(1/2)~ log10(income*education)+type* women*census, data=prestige_train)
+p7=predict(gm3,newdata = prestige_test)
+with(prestige_test,{
+  plot(prestige,type="l",main=" predict with model 7 ")
+  points(p7^2,col=3,type="l")
+})
+outlierTest(gm3)
+ncvTest(gm3)
 #1: glm.fit: algorithm did not converge
 formula=isSetosa~ Sepal.Length+Sepal.Width+Petal.Length+Petal.Width
 gm1=glm(formula,data=traindata,family = binomial(link = "logit"),control = list(maxit = 50))
 p5=predict(gm1,newdata=iristest, type="response")
 summary(gm1)
 round(p5,3)
+
+plot(p5,type="l",col=2)
+
+
 
 # 3  reguression with regularization  to avoid overfitting   user ridge regression. 
 # so powerful!!! better than my trained lm 
