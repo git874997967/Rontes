@@ -1,0 +1,26 @@
+
+library(devtools)
+library(Rcpp)
+install_github('ramnathv/rCharts')
+install_github("madlogos/recharts") 
+library(rCharts)
+library(recharts)
+library(d3r)
+## Example 1 Facetted Scatterplot
+names(iris) = gsub("\\.", "", names(iris))
+rPlot(SepalLength ~ SepalWidth | Species, data = iris, color = 'Species', type = 'point')
+ 
+hair_eye_male <- subset(as.data.frame(HairEyeColor), Sex =="Male")
+nPlot(Freq~ Hair,group = "Eye",data =hair_eye_male, type = "multiBarChart")
+ 
+nPlot(Freq~ Hair,group = "Eye",data =hair_eye_male, type = "multiBarHorizontalChart")
+nPlot(~SepalLength,data =iris, type = "discreteBarChart")
+nPlot(SepalWidth~SepalLength,data =iris, type = "scatterChart",group='Species')
+plot(SepalWidth~SepalLength,data =iris,type="p",group='Species')
+nPlot(SepalWidth~SepalLength,data =iris, type = "lineChart")
+nPlot(~Species,data =iris, type = "pieChart")
+map3 <- Leaflet$new()
+map3$setView(c(51.505, -0.09), zoom = 13)
+map3$marker(c(51.5, -0.09), bindPopup = "<p> Hi. I am a popup </p>")
+map3$marker(c(51.495, -0.083), bindPopup = "<p> Hi. I am another popup </p>")
+map3$print("chart7")
