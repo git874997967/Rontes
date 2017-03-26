@@ -2,6 +2,7 @@
 library(GGally)
 library(pcaPP)
 library(corrplot)
+library(ca)
 d=iris
 dd=mtcars
 head(d)
@@ -28,3 +29,15 @@ diag(2.1, nr = 3, nc = 5)
  layout(m, widths=c(2, 1),
          heights=c(1, 2))
  layout.show(2)
+ 
+ 
+ mytable=with(iris,table(iris$Species,iris$Sepal.Length))
+prop.table(mytable,1) 
+fit=ca(mytable)
+print(fit) 
+summary(fit)
+plot(fit) 
+plot(fit, mass = TRUE, contrib = "absolute", map =
+       "rowgreen", arrows = c(FALSE, TRUE))
+
+head(diamonds)
