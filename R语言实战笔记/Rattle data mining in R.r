@@ -35,8 +35,6 @@ trainingData <- inputData[trainingRows, ] # training data
 testData <- inputData[-trainingRows, ] # test data
 tuned <- tune.svm(response ~., data = trainingData, gamma = 10^(-6:-1), cost = 10^(1:2)) # tune
 summary (tuned) # to select best gamma and cost
-
-
 sam=sample(2,nrow(inputData),replace = TRUE,prob=c(0.85,0.15))
 train_data=inputData[sam==1,]
 test_data=inputData[sam==2,]
@@ -48,3 +46,4 @@ mean(test_data$response!=predict(svmfit3,test_data))
 plot(svmfit3,input)
 table(test_data$response,predict(svmfit3,test_data))
  
+
