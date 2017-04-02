@@ -43,7 +43,6 @@ summary(tuned2)
 svmfit3=svm(response~., data = train_data,kerneal="radial",cost=100,gamma=0.01,scale = FALSE)
 comparetable2=table(test_data$response,predict(svmfit3,test_data))
 mean(test_data$response!=predict(svmfit3,test_data))
-plot(svmfit3,input)
+plot(svmfit3,inputData)
 table(test_data$response,predict(svmfit3,test_data))
  
-
