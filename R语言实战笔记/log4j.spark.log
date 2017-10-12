@@ -1,0 +1,979 @@
+17/07/10 23:28:24 INFO SparkContext: Running Spark version 2.0.2
+17/07/10 23:28:24 ERROR Shell: Failed to locate the winutils binary in the hadoop binary path
+java.io.IOException: Could not locate executable null\bin\winutils.exe in the Hadoop binaries.
+	at org.apache.hadoop.util.Shell.getQualifiedBinPath(Shell.java:379)
+	at org.apache.hadoop.util.Shell.getWinUtilsPath(Shell.java:394)
+	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:387)
+	at org.apache.hadoop.util.StringUtils.<clinit>(StringUtils.java:80)
+	at org.apache.hadoop.security.SecurityUtil.getAuthenticationMethod(SecurityUtil.java:611)
+	at org.apache.hadoop.security.UserGroupInformation.initialize(UserGroupInformation.java:273)
+	at org.apache.hadoop.security.UserGroupInformation.ensureInitialized(UserGroupInformation.java:261)
+	at org.apache.hadoop.security.UserGroupInformation.loginUserFromSubject(UserGroupInformation.java:791)
+	at org.apache.hadoop.security.UserGroupInformation.getLoginUser(UserGroupInformation.java:761)
+	at org.apache.hadoop.security.UserGroupInformation.getCurrentUser(UserGroupInformation.java:634)
+	at org.apache.spark.util.Utils$$anonfun$getCurrentUserName$1.apply(Utils.scala:2345)
+	at org.apache.spark.util.Utils$$anonfun$getCurrentUserName$1.apply(Utils.scala:2345)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.util.Utils$.getCurrentUserName(Utils.scala:2345)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:294)
+	at org.apache.spark.SparkContext$.getOrCreate(SparkContext.scala:2258)
+	at org.apache.spark.SparkContext.getOrCreate(SparkContext.scala)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sparklyr.Invoke$.invoke(invoke.scala:94)
+	at sparklyr.StreamHandler$.handleMethodCall(stream.scala:89)
+	at sparklyr.StreamHandler$.read(stream.scala:55)
+	at sparklyr.BackendHandler.channelRead0(handler.scala:49)
+	at sparklyr.BackendHandler.channelRead0(handler.scala:14)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:244)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:846)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+	at java.lang.Thread.run(Unknown Source)
+17/07/10 23:28:24 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/07/10 23:28:24 INFO SecurityManager: Changing view acls to: yzm
+17/07/10 23:28:24 INFO SecurityManager: Changing modify acls to: yzm
+17/07/10 23:28:24 INFO SecurityManager: Changing view acls groups to: 
+17/07/10 23:28:24 INFO SecurityManager: Changing modify acls groups to: 
+17/07/10 23:28:24 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(yzm); groups with view permissions: Set(); users  with modify permissions: Set(yzm); groups with modify permissions: Set()
+17/07/10 23:28:24 INFO Utils: Successfully started service 'sparkDriver' on port 49209.
+17/07/10 23:28:24 INFO SparkEnv: Registering MapOutputTracker
+17/07/10 23:28:24 INFO SparkEnv: Registering BlockManagerMaster
+17/07/10 23:28:25 INFO DiskBlockManager: Created local directory at C:\Users\yzm\AppData\Local\Temp\blockmgr-78ca34e5-0600-43b1-8695-6cbac4a686a5
+17/07/10 23:28:25 INFO MemoryStore: MemoryStore started with capacity 366.3 MB
+17/07/10 23:28:25 INFO SparkEnv: Registering OutputCommitCoordinator
+17/07/10 23:28:25 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+17/07/10 23:28:25 INFO SparkUI: Bound SparkUI to 127.0.0.1, and started at http://127.0.0.1:4040
+17/07/10 23:28:25 INFO SparkContext: Added JAR file:/C:/Users/yzm/Documents/R/win-library/3.3/sparklyr/java/sparklyr-2.0-2.11.jar at spark://127.0.0.1:49209/jars/sparklyr-2.0-2.11.jar with timestamp 1499754505340
+17/07/10 23:28:25 INFO Executor: Starting executor ID driver on host localhost
+17/07/10 23:28:25 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 49250.
+17/07/10 23:28:25 INFO NettyBlockTransferService: Server created on 127.0.0.1:49250
+17/07/10 23:28:25 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 127.0.0.1, 49250)
+17/07/10 23:28:25 INFO BlockManagerMasterEndpoint: Registering block manager 127.0.0.1:49250 with 366.3 MB RAM, BlockManagerId(driver, 127.0.0.1, 49250)
+17/07/10 23:28:25 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 127.0.0.1, 49250)
+17/07/10 23:28:25 WARN SparkContext: Use an existing SparkContext, some configuration may not take effect.
+17/07/10 23:28:25 WARN SparkContext: Use an existing SparkContext, some configuration may not take effect.
+17/07/10 23:28:25 INFO HiveSharedState: Warehouse path is 'C:UsersyzmAppDataLocalstudiosparkCachespark-2.0.2-bin-hadoop2.7	mphive'.
+17/07/10 23:28:26 INFO SparkSqlParser: Parsing command: SHOW TABLES
+17/07/10 23:28:26 INFO HiveUtils: Initializing HiveMetastoreConnection version 1.2.1 using Spark classes.
+17/07/10 23:28:26 INFO HiveMetaStore: 0: Opening raw store with implemenation class:org.apache.hadoop.hive.metastore.ObjectStore
+17/07/10 23:28:26 INFO ObjectStore: ObjectStore, initialize called
+17/07/10 23:28:27 INFO Persistence: Property hive.metastore.integral.jdo.pushdown unknown - will be ignored
+17/07/10 23:28:27 INFO Persistence: Property datanucleus.cache.level2 unknown - will be ignored
+17/07/10 23:28:28 INFO ObjectStore: Setting MetaStore object pin classes with hive.metastore.cache.pinobjtypes="Table,StorageDescriptor,SerDeInfo,Partition,Database,Type,FieldSchema,Order"
+17/07/10 23:28:28 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MFieldSchema" is tagged as "embedded-only" so does not have its own datastore table.
+17/07/10 23:28:28 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MOrder" is tagged as "embedded-only" so does not have its own datastore table.
+17/07/10 23:28:29 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MFieldSchema" is tagged as "embedded-only" so does not have its own datastore table.
+17/07/10 23:28:29 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MOrder" is tagged as "embedded-only" so does not have its own datastore table.
+17/07/10 23:28:29 INFO MetaStoreDirectSql: Using direct SQL, underlying DB is DERBY
+17/07/10 23:28:29 INFO ObjectStore: Initialized ObjectStore
+17/07/10 23:28:29 WARN ObjectStore: Version information not found in metastore. hive.metastore.schema.verification is not enabled so recording the schema version 1.2.0
+17/07/10 23:28:29 WARN ObjectStore: Failed to get database default, returning NoSuchObjectException
+17/07/10 23:28:29 INFO HiveMetaStore: Added admin role in metastore
+17/07/10 23:28:29 INFO HiveMetaStore: Added public role in metastore
+17/07/10 23:28:29 INFO HiveMetaStore: No user is added in admin role, since config is empty
+17/07/10 23:28:30 INFO HiveMetaStore: 0: get_all_databases
+17/07/10 23:28:30 INFO audit: ugi=yzm	ip=unknown-ip-addr	cmd=get_all_databases	
+17/07/10 23:28:30 INFO HiveMetaStore: 0: get_functions: db=default pat=*
+17/07/10 23:28:30 INFO audit: ugi=yzm	ip=unknown-ip-addr	cmd=get_functions: db=default pat=*	
+17/07/10 23:28:30 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MResourceUri" is tagged as "embedded-only" so does not have its own datastore table.
+17/07/11 00:03:45 ERROR Shell: Failed to locate the winutils binary in the hadoop binary path
+java.io.IOException: Could not locate executable null\bin\winutils.exe in the Hadoop binaries.
+	at org.apache.hadoop.util.Shell.getQualifiedBinPath(Shell.java:379)
+	at org.apache.hadoop.util.Shell.getWinUtilsPath(Shell.java:394)
+	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:387)
+	at org.apache.hadoop.util.StringUtils.<clinit>(StringUtils.java:80)
+	at org.apache.hadoop.security.SecurityUtil.getAuthenticationMethod(SecurityUtil.java:611)
+	at org.apache.hadoop.security.UserGroupInformation.initialize(UserGroupInformation.java:273)
+	at org.apache.hadoop.security.UserGroupInformation.ensureInitialized(UserGroupInformation.java:261)
+	at org.apache.hadoop.security.UserGroupInformation.loginUserFromSubject(UserGroupInformation.java:791)
+	at org.apache.hadoop.security.UserGroupInformation.getLoginUser(UserGroupInformation.java:761)
+	at org.apache.hadoop.security.UserGroupInformation.getCurrentUser(UserGroupInformation.java:634)
+	at org.apache.spark.util.Utils$$anonfun$getCurrentUserName$1.apply(Utils.scala:2345)
+	at org.apache.spark.util.Utils$$anonfun$getCurrentUserName$1.apply(Utils.scala:2345)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.util.Utils$.getCurrentUserName(Utils.scala:2345)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:294)
+	at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:58)
+	at org.apache.spark.api.r.RRDD$.createSparkContext(RRDD.scala:130)
+	at org.apache.spark.api.r.RRDD.createSparkContext(RRDD.scala)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.spark.api.r.RBackendHandler.handleMethodCall(RBackendHandler.scala:141)
+	at org.apache.spark.api.r.RBackendHandler.channelRead0(RBackendHandler.scala:86)
+	at org.apache.spark.api.r.RBackendHandler.channelRead0(RBackendHandler.scala:38)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:244)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:846)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+	at java.lang.Thread.run(Unknown Source)
+17/07/11 00:03:45 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/07/11 00:03:46 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+17/07/11 00:03:46 ERROR SparkContext: Error initializing SparkContext.
+org.apache.spark.SparkException: Could not parse Master URL: ' spark://localhost:7077'
+	at org.apache.spark.SparkContext$.org$apache$spark$SparkContext$$createTaskScheduler(SparkContext.scala:2501)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:489)
+	at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:58)
+	at org.apache.spark.api.r.RRDD$.createSparkContext(RRDD.scala:130)
+	at org.apache.spark.api.r.RRDD.createSparkContext(RRDD.scala)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.spark.api.r.RBackendHandler.handleMethodCall(RBackendHandler.scala:141)
+	at org.apache.spark.api.r.RBackendHandler.channelRead0(RBackendHandler.scala:86)
+	at org.apache.spark.api.r.RBackendHandler.channelRead0(RBackendHandler.scala:38)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:244)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:846)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+	at java.lang.Thread.run(Unknown Source)
+17/07/11 00:03:46 WARN MetricsSystem: Stopping a MetricsSystem that is not running
+17/07/11 00:03:46 ERROR RBackendHandler: createSparkContext on org.apache.spark.api.r.RRDD failed
+java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.spark.api.r.RBackendHandler.handleMethodCall(RBackendHandler.scala:141)
+	at org.apache.spark.api.r.RBackendHandler.channelRead0(RBackendHandler.scala:86)
+	at org.apache.spark.api.r.RBackendHandler.channelRead0(RBackendHandler.scala:38)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:244)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:846)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.apache.spark.SparkException: Could not parse Master URL: ' spark://localhost:7077'
+	at org.apache.spark.SparkContext$.org$apache$spark$SparkContext$$createTaskScheduler(SparkContext.scala:2501)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:489)
+	at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:58)
+	at org.apache.spark.api.r.RRDD$.createSparkContext(RRDD.scala:130)
+	at org.apache.spark.api.r.RRDD.createSparkContext(RRDD.scala)
+	... 25 more
+17/07/11 00:05:29 ERROR Shell: Failed to locate the winutils binary in the hadoop binary path
+java.io.IOException: Could not locate executable null\bin\winutils.exe in the Hadoop binaries.
+	at org.apache.hadoop.util.Shell.getQualifiedBinPath(Shell.java:379)
+	at org.apache.hadoop.util.Shell.getWinUtilsPath(Shell.java:394)
+	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:387)
+	at org.apache.hadoop.util.StringUtils.<clinit>(StringUtils.java:80)
+	at org.apache.hadoop.security.SecurityUtil.getAuthenticationMethod(SecurityUtil.java:611)
+	at org.apache.hadoop.security.UserGroupInformation.initialize(UserGroupInformation.java:273)
+	at org.apache.hadoop.security.UserGroupInformation.ensureInitialized(UserGroupInformation.java:261)
+	at org.apache.hadoop.security.UserGroupInformation.loginUserFromSubject(UserGroupInformation.java:791)
+	at org.apache.hadoop.security.UserGroupInformation.getLoginUser(UserGroupInformation.java:761)
+	at org.apache.hadoop.security.UserGroupInformation.getCurrentUser(UserGroupInformation.java:634)
+	at org.apache.spark.util.Utils$$anonfun$getCurrentUserName$1.apply(Utils.scala:2345)
+	at org.apache.spark.util.Utils$$anonfun$getCurrentUserName$1.apply(Utils.scala:2345)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.util.Utils$.getCurrentUserName(Utils.scala:2345)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:294)
+	at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:58)
+	at org.apache.spark.api.r.RRDD$.createSparkContext(RRDD.scala:130)
+	at org.apache.spark.api.r.RRDD.createSparkContext(RRDD.scala)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.spark.api.r.RBackendHandler.handleMethodCall(RBackendHandler.scala:141)
+	at org.apache.spark.api.r.RBackendHandler.channelRead0(RBackendHandler.scala:86)
+	at org.apache.spark.api.r.RBackendHandler.channelRead0(RBackendHandler.scala:38)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:244)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:846)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+	at java.lang.Thread.run(Unknown Source)
+17/07/11 00:05:29 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/07/11 00:05:30 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+17/07/11 00:06:46 ERROR Shell: Failed to locate the winutils binary in the hadoop binary path
+java.io.IOException: Could not locate executable null\bin\winutils.exe in the Hadoop binaries.
+	at org.apache.hadoop.util.Shell.getQualifiedBinPath(Shell.java:379)
+	at org.apache.hadoop.util.Shell.getWinUtilsPath(Shell.java:394)
+	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:387)
+	at org.apache.hadoop.util.StringUtils.<clinit>(StringUtils.java:80)
+	at org.apache.hadoop.security.SecurityUtil.getAuthenticationMethod(SecurityUtil.java:611)
+	at org.apache.hadoop.security.UserGroupInformation.initialize(UserGroupInformation.java:273)
+	at org.apache.hadoop.security.UserGroupInformation.ensureInitialized(UserGroupInformation.java:261)
+	at org.apache.hadoop.security.UserGroupInformation.loginUserFromSubject(UserGroupInformation.java:791)
+	at org.apache.hadoop.security.UserGroupInformation.getLoginUser(UserGroupInformation.java:761)
+	at org.apache.hadoop.security.UserGroupInformation.getCurrentUser(UserGroupInformation.java:634)
+	at org.apache.spark.util.Utils$$anonfun$getCurrentUserName$1.apply(Utils.scala:2345)
+	at org.apache.spark.util.Utils$$anonfun$getCurrentUserName$1.apply(Utils.scala:2345)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.util.Utils$.getCurrentUserName(Utils.scala:2345)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:294)
+	at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:58)
+	at org.apache.spark.api.r.RRDD$.createSparkContext(RRDD.scala:130)
+	at org.apache.spark.api.r.RRDD.createSparkContext(RRDD.scala)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.spark.api.r.RBackendHandler.handleMethodCall(RBackendHandler.scala:141)
+	at org.apache.spark.api.r.RBackendHandler.channelRead0(RBackendHandler.scala:86)
+	at org.apache.spark.api.r.RBackendHandler.channelRead0(RBackendHandler.scala:38)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:244)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:846)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+	at java.lang.Thread.run(Unknown Source)
+17/07/11 00:06:46 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/07/11 00:06:47 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+17/07/11 00:06:47 WARN Utils: Service 'SparkUI' could not bind on port 4041. Attempting port 4042.
+17/07/11 00:06:49 ERROR Shell: Failed to locate the winutils binary in the hadoop binary path
+java.io.IOException: Could not locate executable null\bin\winutils.exe in the Hadoop binaries.
+	at org.apache.hadoop.util.Shell.getQualifiedBinPath(Shell.java:379)
+	at org.apache.hadoop.util.Shell.getWinUtilsPath(Shell.java:394)
+	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:387)
+	at org.apache.hadoop.util.StringUtils.<clinit>(StringUtils.java:80)
+	at org.apache.hadoop.security.SecurityUtil.getAuthenticationMethod(SecurityUtil.java:611)
+	at org.apache.hadoop.security.UserGroupInformation.initialize(UserGroupInformation.java:273)
+	at org.apache.hadoop.security.UserGroupInformation.ensureInitialized(UserGroupInformation.java:261)
+	at org.apache.hadoop.security.UserGroupInformation.loginUserFromSubject(UserGroupInformation.java:791)
+	at org.apache.hadoop.security.UserGroupInformation.getLoginUser(UserGroupInformation.java:761)
+	at org.apache.hadoop.security.UserGroupInformation.getCurrentUser(UserGroupInformation.java:634)
+	at org.apache.spark.util.Utils$$anonfun$getCurrentUserName$1.apply(Utils.scala:2345)
+	at org.apache.spark.util.Utils$$anonfun$getCurrentUserName$1.apply(Utils.scala:2345)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.util.Utils$.getCurrentUserName(Utils.scala:2345)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:294)
+	at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:58)
+	at org.apache.spark.api.r.RRDD$.createSparkContext(RRDD.scala:130)
+	at org.apache.spark.api.r.RRDD.createSparkContext(RRDD.scala)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.spark.api.r.RBackendHandler.handleMethodCall(RBackendHandler.scala:141)
+	at org.apache.spark.api.r.RBackendHandler.channelRead0(RBackendHandler.scala:86)
+	at org.apache.spark.api.r.RBackendHandler.channelRead0(RBackendHandler.scala:38)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:244)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:846)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+	at java.lang.Thread.run(Unknown Source)
+17/07/11 00:06:49 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/07/11 00:06:50 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+17/07/11 00:06:50 WARN Utils: Service 'SparkUI' could not bind on port 4041. Attempting port 4042.
+17/07/11 00:06:50 WARN Utils: Service 'SparkUI' could not bind on port 4042. Attempting port 4043.
+17/07/11 00:10:32 ERROR Shell: Failed to locate the winutils binary in the hadoop binary path
+java.io.IOException: Could not locate executable null\bin\winutils.exe in the Hadoop binaries.
+	at org.apache.hadoop.util.Shell.getQualifiedBinPath(Shell.java:379)
+	at org.apache.hadoop.util.Shell.getWinUtilsPath(Shell.java:394)
+	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:387)
+	at org.apache.hadoop.util.StringUtils.<clinit>(StringUtils.java:80)
+	at org.apache.hadoop.security.SecurityUtil.getAuthenticationMethod(SecurityUtil.java:611)
+	at org.apache.hadoop.security.UserGroupInformation.initialize(UserGroupInformation.java:273)
+	at org.apache.hadoop.security.UserGroupInformation.ensureInitialized(UserGroupInformation.java:261)
+	at org.apache.hadoop.security.UserGroupInformation.loginUserFromSubject(UserGroupInformation.java:791)
+	at org.apache.hadoop.security.UserGroupInformation.getLoginUser(UserGroupInformation.java:761)
+	at org.apache.hadoop.security.UserGroupInformation.getCurrentUser(UserGroupInformation.java:634)
+	at org.apache.spark.util.Utils$$anonfun$getCurrentUserName$1.apply(Utils.scala:2345)
+	at org.apache.spark.util.Utils$$anonfun$getCurrentUserName$1.apply(Utils.scala:2345)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.util.Utils$.getCurrentUserName(Utils.scala:2345)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:294)
+	at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:58)
+	at org.apache.spark.api.r.RRDD$.createSparkContext(RRDD.scala:130)
+	at org.apache.spark.api.r.RRDD.createSparkContext(RRDD.scala)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.spark.api.r.RBackendHandler.handleMethodCall(RBackendHandler.scala:141)
+	at org.apache.spark.api.r.RBackendHandler.channelRead0(RBackendHandler.scala:86)
+	at org.apache.spark.api.r.RBackendHandler.channelRead0(RBackendHandler.scala:38)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:244)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:846)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+	at java.lang.Thread.run(Unknown Source)
+17/07/11 00:10:32 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/07/11 00:10:33 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+17/07/11 00:10:33 WARN Utils: Service 'SparkUI' could not bind on port 4041. Attempting port 4042.
+17/07/11 00:10:33 WARN Utils: Service 'SparkUI' could not bind on port 4042. Attempting port 4043.
+17/07/11 00:10:33 WARN Utils: Service 'SparkUI' could not bind on port 4043. Attempting port 4044.
+17/07/11 00:15:27 ERROR Shell: Failed to locate the winutils binary in the hadoop binary path
+java.io.IOException: Could not locate executable null\bin\winutils.exe in the Hadoop binaries.
+	at org.apache.hadoop.util.Shell.getQualifiedBinPath(Shell.java:379)
+	at org.apache.hadoop.util.Shell.getWinUtilsPath(Shell.java:394)
+	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:387)
+	at org.apache.hadoop.util.StringUtils.<clinit>(StringUtils.java:80)
+	at org.apache.hadoop.security.SecurityUtil.getAuthenticationMethod(SecurityUtil.java:611)
+	at org.apache.hadoop.security.UserGroupInformation.initialize(UserGroupInformation.java:273)
+	at org.apache.hadoop.security.UserGroupInformation.ensureInitialized(UserGroupInformation.java:261)
+	at org.apache.hadoop.security.UserGroupInformation.loginUserFromSubject(UserGroupInformation.java:791)
+	at org.apache.hadoop.security.UserGroupInformation.getLoginUser(UserGroupInformation.java:761)
+	at org.apache.hadoop.security.UserGroupInformation.getCurrentUser(UserGroupInformation.java:634)
+	at org.apache.spark.util.Utils$$anonfun$getCurrentUserName$1.apply(Utils.scala:2345)
+	at org.apache.spark.util.Utils$$anonfun$getCurrentUserName$1.apply(Utils.scala:2345)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.util.Utils$.getCurrentUserName(Utils.scala:2345)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:294)
+	at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:58)
+	at org.apache.spark.api.r.RRDD$.createSparkContext(RRDD.scala:130)
+	at org.apache.spark.api.r.RRDD.createSparkContext(RRDD.scala)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.spark.api.r.RBackendHandler.handleMethodCall(RBackendHandler.scala:141)
+	at org.apache.spark.api.r.RBackendHandler.channelRead0(RBackendHandler.scala:86)
+	at org.apache.spark.api.r.RBackendHandler.channelRead0(RBackendHandler.scala:38)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:244)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:846)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+	at java.lang.Thread.run(Unknown Source)
+17/07/11 00:15:27 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/07/11 00:15:28 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+17/07/11 00:15:28 WARN Utils: Service 'SparkUI' could not bind on port 4041. Attempting port 4042.
+17/07/11 00:15:28 WARN Utils: Service 'SparkUI' could not bind on port 4042. Attempting port 4043.
+17/07/11 00:15:28 WARN Utils: Service 'SparkUI' could not bind on port 4043. Attempting port 4044.
+17/07/11 00:15:28 WARN Utils: Service 'SparkUI' could not bind on port 4044. Attempting port 4045.
+17/07/11 00:15:28 ERROR SparkContext: Error initializing SparkContext.
+org.apache.spark.SparkException: Could not parse Master URL: ' spark://localhost:7077'
+	at org.apache.spark.SparkContext$.org$apache$spark$SparkContext$$createTaskScheduler(SparkContext.scala:2501)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:489)
+	at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:58)
+	at org.apache.spark.api.r.RRDD$.createSparkContext(RRDD.scala:130)
+	at org.apache.spark.api.r.RRDD.createSparkContext(RRDD.scala)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.spark.api.r.RBackendHandler.handleMethodCall(RBackendHandler.scala:141)
+	at org.apache.spark.api.r.RBackendHandler.channelRead0(RBackendHandler.scala:86)
+	at org.apache.spark.api.r.RBackendHandler.channelRead0(RBackendHandler.scala:38)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:244)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:846)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+	at java.lang.Thread.run(Unknown Source)
+17/07/11 00:15:28 WARN MetricsSystem: Stopping a MetricsSystem that is not running
+17/07/11 00:15:28 ERROR RBackendHandler: createSparkContext on org.apache.spark.api.r.RRDD failed
+java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.spark.api.r.RBackendHandler.handleMethodCall(RBackendHandler.scala:141)
+	at org.apache.spark.api.r.RBackendHandler.channelRead0(RBackendHandler.scala:86)
+	at org.apache.spark.api.r.RBackendHandler.channelRead0(RBackendHandler.scala:38)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:244)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:846)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.apache.spark.SparkException: Could not parse Master URL: ' spark://localhost:7077'
+	at org.apache.spark.SparkContext$.org$apache$spark$SparkContext$$createTaskScheduler(SparkContext.scala:2501)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:489)
+	at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:58)
+	at org.apache.spark.api.r.RRDD$.createSparkContext(RRDD.scala:130)
+	at org.apache.spark.api.r.RRDD.createSparkContext(RRDD.scala)
+	... 25 more
+17/07/11 00:16:10 ERROR Shell: Failed to locate the winutils binary in the hadoop binary path
+java.io.IOException: Could not locate executable null\bin\winutils.exe in the Hadoop binaries.
+	at org.apache.hadoop.util.Shell.getQualifiedBinPath(Shell.java:379)
+	at org.apache.hadoop.util.Shell.getWinUtilsPath(Shell.java:394)
+	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:387)
+	at org.apache.hadoop.util.StringUtils.<clinit>(StringUtils.java:80)
+	at org.apache.hadoop.security.SecurityUtil.getAuthenticationMethod(SecurityUtil.java:611)
+	at org.apache.hadoop.security.UserGroupInformation.initialize(UserGroupInformation.java:273)
+	at org.apache.hadoop.security.UserGroupInformation.ensureInitialized(UserGroupInformation.java:261)
+	at org.apache.hadoop.security.UserGroupInformation.loginUserFromSubject(UserGroupInformation.java:791)
+	at org.apache.hadoop.security.UserGroupInformation.getLoginUser(UserGroupInformation.java:761)
+	at org.apache.hadoop.security.UserGroupInformation.getCurrentUser(UserGroupInformation.java:634)
+	at org.apache.spark.util.Utils$$anonfun$getCurrentUserName$1.apply(Utils.scala:2345)
+	at org.apache.spark.util.Utils$$anonfun$getCurrentUserName$1.apply(Utils.scala:2345)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.util.Utils$.getCurrentUserName(Utils.scala:2345)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:294)
+	at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:58)
+	at org.apache.spark.api.r.RRDD$.createSparkContext(RRDD.scala:130)
+	at org.apache.spark.api.r.RRDD.createSparkContext(RRDD.scala)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.spark.api.r.RBackendHandler.handleMethodCall(RBackendHandler.scala:141)
+	at org.apache.spark.api.r.RBackendHandler.channelRead0(RBackendHandler.scala:86)
+	at org.apache.spark.api.r.RBackendHandler.channelRead0(RBackendHandler.scala:38)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:244)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:846)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+	at java.lang.Thread.run(Unknown Source)
+17/07/11 00:16:10 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/07/11 00:16:11 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+17/07/11 00:16:11 WARN Utils: Service 'SparkUI' could not bind on port 4041. Attempting port 4042.
+17/07/11 00:16:11 WARN Utils: Service 'SparkUI' could not bind on port 4042. Attempting port 4043.
+17/07/11 00:16:11 WARN Utils: Service 'SparkUI' could not bind on port 4043. Attempting port 4044.
+17/07/11 00:16:11 WARN Utils: Service 'SparkUI' could not bind on port 4044. Attempting port 4045.
+17/07/11 00:16:11 ERROR SparkContext: Error initializing SparkContext.
+org.apache.spark.SparkException: Could not parse Master URL: ' spark://localhost:7077'
+	at org.apache.spark.SparkContext$.org$apache$spark$SparkContext$$createTaskScheduler(SparkContext.scala:2501)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:489)
+	at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:58)
+	at org.apache.spark.api.r.RRDD$.createSparkContext(RRDD.scala:130)
+	at org.apache.spark.api.r.RRDD.createSparkContext(RRDD.scala)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.spark.api.r.RBackendHandler.handleMethodCall(RBackendHandler.scala:141)
+	at org.apache.spark.api.r.RBackendHandler.channelRead0(RBackendHandler.scala:86)
+	at org.apache.spark.api.r.RBackendHandler.channelRead0(RBackendHandler.scala:38)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:244)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:846)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+	at java.lang.Thread.run(Unknown Source)
+17/07/11 00:16:11 WARN MetricsSystem: Stopping a MetricsSystem that is not running
+17/07/11 00:16:11 ERROR RBackendHandler: createSparkContext on org.apache.spark.api.r.RRDD failed
+java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.spark.api.r.RBackendHandler.handleMethodCall(RBackendHandler.scala:141)
+	at org.apache.spark.api.r.RBackendHandler.channelRead0(RBackendHandler.scala:86)
+	at org.apache.spark.api.r.RBackendHandler.channelRead0(RBackendHandler.scala:38)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:244)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:846)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.apache.spark.SparkException: Could not parse Master URL: ' spark://localhost:7077'
+	at org.apache.spark.SparkContext$.org$apache$spark$SparkContext$$createTaskScheduler(SparkContext.scala:2501)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:489)
+	at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:58)
+	at org.apache.spark.api.r.RRDD$.createSparkContext(RRDD.scala:130)
+	at org.apache.spark.api.r.RRDD.createSparkContext(RRDD.scala)
+	... 25 more
+17/07/11 00:16:27 ERROR Shell: Failed to locate the winutils binary in the hadoop binary path
+java.io.IOException: Could not locate executable null\bin\winutils.exe in the Hadoop binaries.
+	at org.apache.hadoop.util.Shell.getQualifiedBinPath(Shell.java:379)
+	at org.apache.hadoop.util.Shell.getWinUtilsPath(Shell.java:394)
+	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:387)
+	at org.apache.hadoop.util.StringUtils.<clinit>(StringUtils.java:80)
+	at org.apache.hadoop.security.SecurityUtil.getAuthenticationMethod(SecurityUtil.java:611)
+	at org.apache.hadoop.security.UserGroupInformation.initialize(UserGroupInformation.java:273)
+	at org.apache.hadoop.security.UserGroupInformation.ensureInitialized(UserGroupInformation.java:261)
+	at org.apache.hadoop.security.UserGroupInformation.loginUserFromSubject(UserGroupInformation.java:791)
+	at org.apache.hadoop.security.UserGroupInformation.getLoginUser(UserGroupInformation.java:761)
+	at org.apache.hadoop.security.UserGroupInformation.getCurrentUser(UserGroupInformation.java:634)
+	at org.apache.spark.util.Utils$$anonfun$getCurrentUserName$1.apply(Utils.scala:2345)
+	at org.apache.spark.util.Utils$$anonfun$getCurrentUserName$1.apply(Utils.scala:2345)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.util.Utils$.getCurrentUserName(Utils.scala:2345)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:294)
+	at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:58)
+	at org.apache.spark.api.r.RRDD$.createSparkContext(RRDD.scala:130)
+	at org.apache.spark.api.r.RRDD.createSparkContext(RRDD.scala)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.spark.api.r.RBackendHandler.handleMethodCall(RBackendHandler.scala:141)
+	at org.apache.spark.api.r.RBackendHandler.channelRead0(RBackendHandler.scala:86)
+	at org.apache.spark.api.r.RBackendHandler.channelRead0(RBackendHandler.scala:38)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:244)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:846)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+	at java.lang.Thread.run(Unknown Source)
+17/07/11 00:16:27 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/07/11 00:16:28 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+17/07/11 00:16:28 WARN Utils: Service 'SparkUI' could not bind on port 4041. Attempting port 4042.
+17/07/11 00:16:28 WARN Utils: Service 'SparkUI' could not bind on port 4042. Attempting port 4043.
+17/07/11 00:16:28 WARN Utils: Service 'SparkUI' could not bind on port 4043. Attempting port 4044.
+17/07/11 00:16:28 WARN Utils: Service 'SparkUI' could not bind on port 4044. Attempting port 4045.
+17/07/11 00:17:54 ERROR Shell: Failed to locate the winutils binary in the hadoop binary path
+java.io.IOException: Could not locate executable null\bin\winutils.exe in the Hadoop binaries.
+	at org.apache.hadoop.util.Shell.getQualifiedBinPath(Shell.java:379)
+	at org.apache.hadoop.util.Shell.getWinUtilsPath(Shell.java:394)
+	at org.apache.hadoop.util.Shell.<clinit>(Shell.java:387)
+	at org.apache.hadoop.util.StringUtils.<clinit>(StringUtils.java:80)
+	at org.apache.hadoop.security.SecurityUtil.getAuthenticationMethod(SecurityUtil.java:611)
+	at org.apache.hadoop.security.UserGroupInformation.initialize(UserGroupInformation.java:273)
+	at org.apache.hadoop.security.UserGroupInformation.ensureInitialized(UserGroupInformation.java:261)
+	at org.apache.hadoop.security.UserGroupInformation.loginUserFromSubject(UserGroupInformation.java:791)
+	at org.apache.hadoop.security.UserGroupInformation.getLoginUser(UserGroupInformation.java:761)
+	at org.apache.hadoop.security.UserGroupInformation.getCurrentUser(UserGroupInformation.java:634)
+	at org.apache.spark.util.Utils$$anonfun$getCurrentUserName$1.apply(Utils.scala:2345)
+	at org.apache.spark.util.Utils$$anonfun$getCurrentUserName$1.apply(Utils.scala:2345)
+	at scala.Option.getOrElse(Option.scala:121)
+	at org.apache.spark.util.Utils$.getCurrentUserName(Utils.scala:2345)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:294)
+	at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:58)
+	at org.apache.spark.api.r.RRDD$.createSparkContext(RRDD.scala:130)
+	at org.apache.spark.api.r.RRDD.createSparkContext(RRDD.scala)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.spark.api.r.RBackendHandler.handleMethodCall(RBackendHandler.scala:141)
+	at org.apache.spark.api.r.RBackendHandler.channelRead0(RBackendHandler.scala:86)
+	at org.apache.spark.api.r.RBackendHandler.channelRead0(RBackendHandler.scala:38)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:244)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:846)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+	at java.lang.Thread.run(Unknown Source)
+17/07/11 00:17:54 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+17/07/11 00:17:54 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+17/07/11 00:17:54 WARN Utils: Service 'SparkUI' could not bind on port 4041. Attempting port 4042.
+17/07/11 00:17:54 WARN Utils: Service 'SparkUI' could not bind on port 4042. Attempting port 4043.
+17/07/11 00:17:54 WARN Utils: Service 'SparkUI' could not bind on port 4043. Attempting port 4044.
+17/07/11 00:17:54 WARN Utils: Service 'SparkUI' could not bind on port 4044. Attempting port 4045.
+17/07/11 00:17:54 WARN Utils: Service 'SparkUI' could not bind on port 4045. Attempting port 4046.
+17/07/11 00:17:54 ERROR SparkContext: Error initializing SparkContext.
+org.apache.spark.SparkException: Could not parse Master URL: ' spark://localhost:4040'
+	at org.apache.spark.SparkContext$.org$apache$spark$SparkContext$$createTaskScheduler(SparkContext.scala:2501)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:489)
+	at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:58)
+	at org.apache.spark.api.r.RRDD$.createSparkContext(RRDD.scala:130)
+	at org.apache.spark.api.r.RRDD.createSparkContext(RRDD.scala)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.spark.api.r.RBackendHandler.handleMethodCall(RBackendHandler.scala:141)
+	at org.apache.spark.api.r.RBackendHandler.channelRead0(RBackendHandler.scala:86)
+	at org.apache.spark.api.r.RBackendHandler.channelRead0(RBackendHandler.scala:38)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:244)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:846)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+	at java.lang.Thread.run(Unknown Source)
+17/07/11 00:17:54 WARN MetricsSystem: Stopping a MetricsSystem that is not running
+17/07/11 00:17:54 ERROR RBackendHandler: createSparkContext on org.apache.spark.api.r.RRDD failed
+java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.spark.api.r.RBackendHandler.handleMethodCall(RBackendHandler.scala:141)
+	at org.apache.spark.api.r.RBackendHandler.channelRead0(RBackendHandler.scala:86)
+	at org.apache.spark.api.r.RBackendHandler.channelRead0(RBackendHandler.scala:38)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:244)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:308)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:294)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:846)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:131)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:511)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:468)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:382)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:354)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:111)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:137)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.apache.spark.SparkException: Could not parse Master URL: ' spark://localhost:4040'
+	at org.apache.spark.SparkContext$.org$apache$spark$SparkContext$$createTaskScheduler(SparkContext.scala:2501)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:489)
+	at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:58)
+	at org.apache.spark.api.r.RRDD$.createSparkContext(RRDD.scala:130)
+	at org.apache.spark.api.r.RRDD.createSparkContext(RRDD.scala)
+	... 25 more
+17/07/11 00:19:42 INFO SparkSqlParser: Parsing command: SHOW TABLES
+17/07/11 00:19:42 INFO HiveUtils: Initializing HiveMetastoreConnection version 1.2.1 using Spark classes.
+17/07/11 00:19:42 INFO HiveMetaStore: 0: Opening raw store with implemenation class:org.apache.hadoop.hive.metastore.ObjectStore
+17/07/11 00:19:42 INFO ObjectStore: ObjectStore, initialize called
+17/07/11 00:19:42 INFO Persistence: Property hive.metastore.integral.jdo.pushdown unknown - will be ignored
+17/07/11 00:19:42 INFO Persistence: Property datanucleus.cache.level2 unknown - will be ignored
+17/07/11 00:19:43 INFO ObjectStore: Setting MetaStore object pin classes with hive.metastore.cache.pinobjtypes="Table,StorageDescriptor,SerDeInfo,Partition,Database,Type,FieldSchema,Order"
+17/07/11 00:19:44 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MFieldSchema" is tagged as "embedded-only" so does not have its own datastore table.
+17/07/11 00:19:44 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MOrder" is tagged as "embedded-only" so does not have its own datastore table.
+17/07/11 00:19:44 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MFieldSchema" is tagged as "embedded-only" so does not have its own datastore table.
+17/07/11 00:19:44 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MOrder" is tagged as "embedded-only" so does not have its own datastore table.
+17/07/11 00:19:45 INFO MetaStoreDirectSql: Using direct SQL, underlying DB is DERBY
+17/07/11 00:19:45 INFO ObjectStore: Initialized ObjectStore
+17/07/11 00:19:45 WARN ObjectStore: Version information not found in metastore. hive.metastore.schema.verification is not enabled so recording the schema version 1.2.0
+17/07/11 00:19:45 WARN ObjectStore: Failed to get database default, returning NoSuchObjectException
+17/07/11 00:19:45 INFO HiveMetaStore: Added admin role in metastore
+17/07/11 00:19:45 INFO HiveMetaStore: Added public role in metastore
+17/07/11 00:19:45 INFO HiveMetaStore: No user is added in admin role, since config is empty
+17/07/11 00:19:45 INFO HiveMetaStore: 0: get_all_databases
+17/07/11 00:19:45 INFO audit: ugi=yzm	ip=unknown-ip-addr	cmd=get_all_databases	
+17/07/11 00:19:45 INFO HiveMetaStore: 0: get_functions: db=default pat=*
+17/07/11 00:19:45 INFO audit: ugi=yzm	ip=unknown-ip-addr	cmd=get_functions: db=default pat=*	
+17/07/11 00:19:45 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MResourceUri" is tagged as "embedded-only" so does not have its own datastore table.
+17/07/11 00:20:08 INFO SparkSqlParser: Parsing command: SHOW TABLES
+17/07/11 00:20:08 INFO HiveUtils: Initializing HiveMetastoreConnection version 1.2.1 using Spark classes.
+17/07/11 00:20:08 INFO HiveMetaStore: 0: Opening raw store with implemenation class:org.apache.hadoop.hive.metastore.ObjectStore
+17/07/11 00:20:08 INFO ObjectStore: ObjectStore, initialize called
+17/07/11 00:20:08 INFO Persistence: Property hive.metastore.integral.jdo.pushdown unknown - will be ignored
+17/07/11 00:20:08 INFO Persistence: Property datanucleus.cache.level2 unknown - will be ignored
+17/07/11 00:20:09 INFO ObjectStore: Setting MetaStore object pin classes with hive.metastore.cache.pinobjtypes="Table,StorageDescriptor,SerDeInfo,Partition,Database,Type,FieldSchema,Order"
+17/07/11 00:20:10 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MFieldSchema" is tagged as "embedded-only" so does not have its own datastore table.
+17/07/11 00:20:10 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MOrder" is tagged as "embedded-only" so does not have its own datastore table.
+17/07/11 00:20:10 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MFieldSchema" is tagged as "embedded-only" so does not have its own datastore table.
+17/07/11 00:20:10 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MOrder" is tagged as "embedded-only" so does not have its own datastore table.
+17/07/11 00:20:11 INFO MetaStoreDirectSql: Using direct SQL, underlying DB is DERBY
+17/07/11 00:20:11 INFO ObjectStore: Initialized ObjectStore
+17/07/11 00:20:11 WARN ObjectStore: Version information not found in metastore. hive.metastore.schema.verification is not enabled so recording the schema version 1.2.0
+17/07/11 00:20:11 WARN ObjectStore: Failed to get database default, returning NoSuchObjectException
+17/07/11 00:20:11 INFO HiveMetaStore: Added admin role in metastore
+17/07/11 00:20:11 INFO HiveMetaStore: Added public role in metastore
+17/07/11 00:20:11 INFO HiveMetaStore: No user is added in admin role, since config is empty
+17/07/11 00:20:11 INFO HiveMetaStore: 0: get_all_databases
+17/07/11 00:20:11 INFO audit: ugi=yzm	ip=unknown-ip-addr	cmd=get_all_databases	
+17/07/11 00:20:11 INFO HiveMetaStore: 0: get_functions: db=default pat=*
+17/07/11 00:20:11 INFO audit: ugi=yzm	ip=unknown-ip-addr	cmd=get_functions: db=default pat=*	
+17/07/11 00:20:11 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MResourceUri" is tagged as "embedded-only" so does not have its own datastore table.
+17/07/11 00:20:14 INFO SparkSqlParser: Parsing command: SHOW TABLES
+17/07/11 00:20:14 INFO HiveUtils: Initializing HiveMetastoreConnection version 1.2.1 using Spark classes.
+17/07/11 00:20:14 INFO HiveMetaStore: 0: Opening raw store with implemenation class:org.apache.hadoop.hive.metastore.ObjectStore
+17/07/11 00:20:14 INFO ObjectStore: ObjectStore, initialize called
+17/07/11 00:20:14 INFO Persistence: Property hive.metastore.integral.jdo.pushdown unknown - will be ignored
+17/07/11 00:20:14 INFO Persistence: Property datanucleus.cache.level2 unknown - will be ignored
+17/07/11 00:20:15 INFO ObjectStore: Setting MetaStore object pin classes with hive.metastore.cache.pinobjtypes="Table,StorageDescriptor,SerDeInfo,Partition,Database,Type,FieldSchema,Order"
+17/07/11 00:20:16 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MFieldSchema" is tagged as "embedded-only" so does not have its own datastore table.
+17/07/11 00:20:16 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MOrder" is tagged as "embedded-only" so does not have its own datastore table.
+17/07/11 00:20:16 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MFieldSchema" is tagged as "embedded-only" so does not have its own datastore table.
+17/07/11 00:20:16 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MOrder" is tagged as "embedded-only" so does not have its own datastore table.
+17/07/11 00:20:16 INFO MetaStoreDirectSql: Using direct SQL, underlying DB is DERBY
+17/07/11 00:20:16 INFO ObjectStore: Initialized ObjectStore
+17/07/11 00:20:16 WARN ObjectStore: Version information not found in metastore. hive.metastore.schema.verification is not enabled so recording the schema version 1.2.0
+17/07/11 00:20:16 WARN ObjectStore: Failed to get database default, returning NoSuchObjectException
+17/07/11 00:20:17 INFO HiveMetaStore: Added admin role in metastore
+17/07/11 00:20:17 INFO HiveMetaStore: Added public role in metastore
+17/07/11 00:20:17 INFO HiveMetaStore: No user is added in admin role, since config is empty
+17/07/11 00:20:17 INFO HiveMetaStore: 0: get_all_databases
+17/07/11 00:20:17 INFO audit: ugi=yzm	ip=unknown-ip-addr	cmd=get_all_databases	
+17/07/11 00:20:17 INFO HiveMetaStore: 0: get_functions: db=default pat=*
+17/07/11 00:20:17 INFO audit: ugi=yzm	ip=unknown-ip-addr	cmd=get_functions: db=default pat=*	
+17/07/11 00:20:17 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MResourceUri" is tagged as "embedded-only" so does not have its own datastore table.
+17/07/11 00:20:20 INFO SparkSqlParser: Parsing command: SHOW TABLES
+17/07/11 00:20:20 INFO HiveUtils: Initializing HiveMetastoreConnection version 1.2.1 using Spark classes.
+17/07/11 00:20:21 INFO HiveMetaStore: 0: Opening raw store with implemenation class:org.apache.hadoop.hive.metastore.ObjectStore
+17/07/11 00:20:21 INFO ObjectStore: ObjectStore, initialize called
+17/07/11 00:20:21 INFO Persistence: Property hive.metastore.integral.jdo.pushdown unknown - will be ignored
+17/07/11 00:20:21 INFO Persistence: Property datanucleus.cache.level2 unknown - will be ignored
+17/07/11 00:20:22 INFO ObjectStore: Setting MetaStore object pin classes with hive.metastore.cache.pinobjtypes="Table,StorageDescriptor,SerDeInfo,Partition,Database,Type,FieldSchema,Order"
+17/07/11 00:20:22 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MFieldSchema" is tagged as "embedded-only" so does not have its own datastore table.
+17/07/11 00:20:22 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MOrder" is tagged as "embedded-only" so does not have its own datastore table.
+17/07/11 00:20:23 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MFieldSchema" is tagged as "embedded-only" so does not have its own datastore table.
+17/07/11 00:20:23 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MOrder" is tagged as "embedded-only" so does not have its own datastore table.
+17/07/11 00:20:23 INFO MetaStoreDirectSql: Using direct SQL, underlying DB is DERBY
+17/07/11 00:20:23 INFO ObjectStore: Initialized ObjectStore
+17/07/11 00:20:23 WARN ObjectStore: Version information not found in metastore. hive.metastore.schema.verification is not enabled so recording the schema version 1.2.0
+17/07/11 00:20:23 WARN ObjectStore: Failed to get database default, returning NoSuchObjectException
+17/07/11 00:20:23 INFO HiveMetaStore: Added admin role in metastore
+17/07/11 00:20:23 INFO HiveMetaStore: Added public role in metastore
+17/07/11 00:20:23 INFO HiveMetaStore: No user is added in admin role, since config is empty
+17/07/11 00:20:23 INFO HiveMetaStore: 0: get_all_databases
+17/07/11 00:20:23 INFO audit: ugi=yzm	ip=unknown-ip-addr	cmd=get_all_databases	
+17/07/11 00:20:23 INFO HiveMetaStore: 0: get_functions: db=default pat=*
+17/07/11 00:20:23 INFO audit: ugi=yzm	ip=unknown-ip-addr	cmd=get_functions: db=default pat=*	
+17/07/11 00:20:23 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MResourceUri" is tagged as "embedded-only" so does not have its own datastore table.
+17/07/11 00:20:23 INFO SparkSqlParser: Parsing command: SHOW TABLES
+17/07/11 00:20:23 INFO HiveUtils: Initializing HiveMetastoreConnection version 1.2.1 using Spark classes.
+17/07/11 00:20:24 INFO HiveMetaStore: 0: Opening raw store with implemenation class:org.apache.hadoop.hive.metastore.ObjectStore
+17/07/11 00:20:24 INFO ObjectStore: ObjectStore, initialize called
+17/07/11 00:20:24 INFO Persistence: Property hive.metastore.integral.jdo.pushdown unknown - will be ignored
+17/07/11 00:20:24 INFO Persistence: Property datanucleus.cache.level2 unknown - will be ignored
+17/07/11 00:20:25 INFO ObjectStore: Setting MetaStore object pin classes with hive.metastore.cache.pinobjtypes="Table,StorageDescriptor,SerDeInfo,Partition,Database,Type,FieldSchema,Order"
+17/07/11 00:20:26 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MFieldSchema" is tagged as "embedded-only" so does not have its own datastore table.
+17/07/11 00:20:26 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MOrder" is tagged as "embedded-only" so does not have its own datastore table.
+17/07/11 00:20:26 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MFieldSchema" is tagged as "embedded-only" so does not have its own datastore table.
+17/07/11 00:20:26 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MOrder" is tagged as "embedded-only" so does not have its own datastore table.
+17/07/11 00:20:26 INFO MetaStoreDirectSql: Using direct SQL, underlying DB is DERBY
+17/07/11 00:20:26 INFO ObjectStore: Initialized ObjectStore
+17/07/11 00:20:26 WARN ObjectStore: Version information not found in metastore. hive.metastore.schema.verification is not enabled so recording the schema version 1.2.0
+17/07/11 00:20:27 WARN ObjectStore: Failed to get database default, returning NoSuchObjectException
+17/07/11 00:20:27 INFO HiveMetaStore: Added admin role in metastore
+17/07/11 00:20:27 INFO HiveMetaStore: Added public role in metastore
+17/07/11 00:20:27 INFO HiveMetaStore: No user is added in admin role, since config is empty
+17/07/11 00:20:27 INFO HiveMetaStore: 0: get_all_databases
+17/07/11 00:20:27 INFO audit: ugi=yzm	ip=unknown-ip-addr	cmd=get_all_databases	
+17/07/11 00:20:27 INFO HiveMetaStore: 0: get_functions: db=default pat=*
+17/07/11 00:20:27 INFO audit: ugi=yzm	ip=unknown-ip-addr	cmd=get_functions: db=default pat=*	
+17/07/11 00:20:27 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MResourceUri" is tagged as "embedded-only" so does not have its own datastore table.
+17/07/11 00:20:44 INFO SparkSqlParser: Parsing command: SHOW TABLES
+17/07/11 00:20:44 INFO HiveUtils: Initializing HiveMetastoreConnection version 1.2.1 using Spark classes.
+17/07/11 00:20:44 INFO HiveMetaStore: 0: Opening raw store with implemenation class:org.apache.hadoop.hive.metastore.ObjectStore
+17/07/11 00:20:44 INFO ObjectStore: ObjectStore, initialize called
+17/07/11 00:20:45 INFO Persistence: Property hive.metastore.integral.jdo.pushdown unknown - will be ignored
+17/07/11 00:20:45 INFO Persistence: Property datanucleus.cache.level2 unknown - will be ignored
+17/07/11 00:20:46 INFO ObjectStore: Setting MetaStore object pin classes with hive.metastore.cache.pinobjtypes="Table,StorageDescriptor,SerDeInfo,Partition,Database,Type,FieldSchema,Order"
+17/07/11 00:20:46 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MFieldSchema" is tagged as "embedded-only" so does not have its own datastore table.
+17/07/11 00:20:46 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MOrder" is tagged as "embedded-only" so does not have its own datastore table.
+17/07/11 00:20:47 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MFieldSchema" is tagged as "embedded-only" so does not have its own datastore table.
+17/07/11 00:20:47 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MOrder" is tagged as "embedded-only" so does not have its own datastore table.
+17/07/11 00:20:47 INFO MetaStoreDirectSql: Using direct SQL, underlying DB is DERBY
+17/07/11 00:20:47 INFO ObjectStore: Initialized ObjectStore
+17/07/11 00:20:47 WARN ObjectStore: Version information not found in metastore. hive.metastore.schema.verification is not enabled so recording the schema version 1.2.0
+17/07/11 00:20:47 WARN ObjectStore: Failed to get database default, returning NoSuchObjectException
+17/07/11 00:20:47 INFO HiveMetaStore: Added admin role in metastore
+17/07/11 00:20:47 INFO HiveMetaStore: Added public role in metastore
+17/07/11 00:20:47 INFO HiveMetaStore: No user is added in admin role, since config is empty
+17/07/11 00:20:47 INFO HiveMetaStore: 0: get_all_databases
+17/07/11 00:20:47 INFO audit: ugi=yzm	ip=unknown-ip-addr	cmd=get_all_databases	
+17/07/11 00:20:47 INFO HiveMetaStore: 0: get_functions: db=default pat=*
+17/07/11 00:20:47 INFO audit: ugi=yzm	ip=unknown-ip-addr	cmd=get_functions: db=default pat=*	
+17/07/11 00:20:47 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MResourceUri" is tagged as "embedded-only" so does not have its own datastore table.
+17/07/11 00:20:47 INFO SparkSqlParser: Parsing command: SHOW TABLES
+17/07/11 00:20:47 INFO HiveUtils: Initializing HiveMetastoreConnection version 1.2.1 using Spark classes.
+17/07/11 00:20:48 INFO HiveMetaStore: 0: Opening raw store with implemenation class:org.apache.hadoop.hive.metastore.ObjectStore
+17/07/11 00:20:48 INFO ObjectStore: ObjectStore, initialize called
+17/07/11 00:20:48 INFO Persistence: Property hive.metastore.integral.jdo.pushdown unknown - will be ignored
+17/07/11 00:20:48 INFO Persistence: Property datanucleus.cache.level2 unknown - will be ignored
+17/07/11 00:20:49 INFO ObjectStore: Setting MetaStore object pin classes with hive.metastore.cache.pinobjtypes="Table,StorageDescriptor,SerDeInfo,Partition,Database,Type,FieldSchema,Order"
+17/07/11 00:20:49 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MFieldSchema" is tagged as "embedded-only" so does not have its own datastore table.
+17/07/11 00:20:49 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MOrder" is tagged as "embedded-only" so does not have its own datastore table.
+17/07/11 00:20:50 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MFieldSchema" is tagged as "embedded-only" so does not have its own datastore table.
+17/07/11 00:20:50 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MOrder" is tagged as "embedded-only" so does not have its own datastore table.
+17/07/11 00:20:50 INFO MetaStoreDirectSql: Using direct SQL, underlying DB is DERBY
+17/07/11 00:20:50 INFO ObjectStore: Initialized ObjectStore
+17/07/11 00:20:50 WARN ObjectStore: Version information not found in metastore. hive.metastore.schema.verification is not enabled so recording the schema version 1.2.0
+17/07/11 00:20:50 WARN ObjectStore: Failed to get database default, returning NoSuchObjectException
+17/07/11 00:20:50 INFO HiveMetaStore: Added admin role in metastore
+17/07/11 00:20:50 INFO HiveMetaStore: Added public role in metastore
+17/07/11 00:20:50 INFO HiveMetaStore: No user is added in admin role, since config is empty
+17/07/11 00:20:50 INFO HiveMetaStore: 0: get_all_databases
+17/07/11 00:20:50 INFO audit: ugi=yzm	ip=unknown-ip-addr	cmd=get_all_databases	
+17/07/11 00:20:50 INFO HiveMetaStore: 0: get_functions: db=default pat=*
+17/07/11 00:20:50 INFO audit: ugi=yzm	ip=unknown-ip-addr	cmd=get_functions: db=default pat=*	
+17/07/11 00:20:50 INFO Datastore: The class "org.apache.hadoop.hive.metastore.model.MResourceUri" is tagged as "embedded-only" so does not have its own datastore table.
+17/07/11 00:21:13 INFO SparkContext: Invoking stop() from shutdown hook
+17/07/11 00:21:13 INFO SparkUI: Stopped Spark web UI at http://127.0.0.1:4040
+17/07/11 00:21:13 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+17/07/11 00:21:13 INFO MemoryStore: MemoryStore cleared
+17/07/11 00:21:13 INFO BlockManager: BlockManager stopped
+17/07/11 00:21:13 INFO BlockManagerMaster: BlockManagerMaster stopped
+17/07/11 00:21:13 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+17/07/11 00:21:13 INFO SparkContext: Successfully stopped SparkContext
+17/07/11 00:21:13 INFO ShutdownHookManager: Shutdown hook called
+17/07/11 00:21:13 INFO ShutdownHookManager: Deleting directory C:\Users\yzm\AppData\Local\Temp\spark-527f5f61-981d-4712-a03b-e6fd8b710c92
