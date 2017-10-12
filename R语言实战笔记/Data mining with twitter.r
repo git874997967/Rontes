@@ -16,7 +16,7 @@
  facr=factor(mtcars$cyl)
  p= ggplot(mtcars,aes(x=mpg,y=wt,color=facr))
  
- p+ geom_point()+theme_classic()+ggtitle("scatter plot in ggplot2")+xlab("mpgg")+ylab("weight")+labs("cylinders")
+ p+ geom_line()+theme_classic()+ggtitle("scatter plot in ggplot2")+xlab("mpgg")+ylab("weight")+labs("cylinders")
  
- 
+ str(p)
  
