@@ -1,10 +1,10 @@
 ----------------------------------------------------------------
-Tue Jul 11 00:20:48 PDT 2017:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): instance a816c00e-015d-3085-9a68-0000163f9930 
-on database directory memory:C:\Users\yzm\Desktop\MEAN&R\Rontes\R语言实战笔记\databaseName=metastore_db with class loader org.apache.spark.sql.hive.client.IsolatedClientLoader$$anon$1@3fcce97a 
+Sat Nov 11 23:11:06 PST 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): instance a816c00e-015f-af11-46bf-000005790b80 
+on database directory memory:C:\Users\yzm\Desktop\MEAN&R\Rontes\R语言实战笔记\databaseName=metastore_db with class loader org.apache.spark.sql.hive.client.IsolatedClientLoader$$anon$1@13bd6cad 
 Loaded from file:/C:/Users/yzm/AppData/Local/rstudio/spark/Cache/spark-2.0.2-bin-hadoop2.7/jars/derby-10.12.1.1.jar
 java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_91-b14
+java.runtime.version=1.8.0_151-b12
 user.dir=C:\Users\yzm\Desktop\MEAN&R\Rontes\R语言实战笔记
 os.name=Windows 10
 os.arch=amd64

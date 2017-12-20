@@ -2,6 +2,7 @@ library(lubridate)
 library(stringr)
 library(editrules)
 library(deducorrect)
+library(Hmisc)
 ######data cleaning
  # type checking   normalizing
  # fix and impute
@@ -199,3 +200,21 @@ dat=data.frame(
 str(dat)
 cor=deduImpute(G,dat)
 cor$corrected
+# ##########
+# next part is talk about how to do imputation
+# the first one is about number,     replace   na with the mean
+# package Hmisc can compute mean and median from na values
+age
+mean(age)
+age[is.na(age)]=mean(age,na.rm=T)
+mean(age)
+class(age)
+ x=c(1,2,NA,4)
+x[2]=NA
+class(x)
+ x=impute(x,mean)
+ x.i
+is.imputed(x)
+
+I= is.na(x)
+I
